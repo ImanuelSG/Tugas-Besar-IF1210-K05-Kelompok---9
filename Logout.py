@@ -1,13 +1,14 @@
-# pembuatan fungsi logout
+# Fungsi Logout
 
 def logout():
     global isLoggedOut
-    if not isLoggedOut:
-        print("Tidak ada akun yang terdaftar!")
-        print("Login terlebih dahulu untuk melakukan logout")
-        return
-    isLoggedIn = False # ketika isLoggedIn = False maka user keluar dari akun
-    print("Anda telah logout dari akun")
+    if isLoggedOut == True : # User belum melakukan login
+        print("Logout gagal!")
+        print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
+    else : # User akan melakukan logout
+        print("Anda telah logout dari akun")    
+    isLoggedOut = True # Ketika isLoggedOut = False maka user keluar dari akun
+    
 
-isLoggedIn = False
+isLoggedOut = False # Inisialisasi bahwa belum terjadinya logout
 

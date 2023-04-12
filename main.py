@@ -5,17 +5,28 @@ import Exit
 import Ayamberkokok
 import Logout
 
+LoggedIn = False
 keluar = False
 while keluar == False :
     command = input(">>> ")
     if command == "login":
         Login.login()
+        LoggedIn = True
+    elif LoggedIn == False :
+        print("Silakan menggunakan command 'login' terlebih dahulu")
     elif command == "help" :
-        Help.help() # Fungsi Help
+        if LoggedIn :
+            Help.help() # Fungsi Help
+        else : # Belum login
+            print("Silakan menggunakan command 'login' terlebih dahulu")
     elif command == "ayamberkokok" :
-        Ayamberkokok.ayamberkokok() # Fungsi ayam berkokok
+        if LoggedIn and Login.user == "Roro" :
+            Ayamberkokok.ayamberkokok() # Fungsi ayam berkokok
+        elif Login.user != "Roro" : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "logout" :
         Logout.logout() # Fungsi Logout
+        Login.isLoggedIn = None 
     elif command == "exit" :
         Exit.exit()
         keluar = True
