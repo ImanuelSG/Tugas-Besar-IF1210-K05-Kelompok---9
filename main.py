@@ -2,6 +2,8 @@
 import Login
 import Help
 import Exit
+import Ayamberkokok
+import Logout
 
 keluar = False
 while keluar == False :
@@ -10,12 +12,15 @@ while keluar == False :
         Login.login()
     elif command == "help" :
         Help.help() # Fungsi Help
+    elif command == "ayamberkokok" :
+        Ayamberkokok.ayamberkokok() # Fungsi ayam berkokok
+    elif command == "logout" :
+        Logout.logout() # Fungsi Logout
     elif command == "exit" :
         Exit.exit()
         keluar = True
-    '''elif command == "logout" :
-        logout() # Fungsi Logout
-    elif command == "summonjin" :
+
+    '''elif command == "summonjin" :
         summonjin() # Fungsi Summon jin
     elif command == "hapusjin" :
         hapusjin() # Fungsi hilangkan jin
@@ -33,8 +38,6 @@ while keluar == False :
         laporancandi() # Fungsi melapor candi
     elif command == "hancurkancandi" :
         hancurkancandi() # Fungsi menghancurkan candi
-    elif command == "ayamberkokok" :
-        ayamberkokok() # Fungsi ayam berkokok
     elif command == "save" :
         save() # Fungsi save
 '''
