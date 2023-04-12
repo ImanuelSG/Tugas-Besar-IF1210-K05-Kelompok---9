@@ -1,16 +1,12 @@
 import Global
-
 # Fungsi mengecek apakah username dan password sudah terdaftar
 def isRegistered(user, password):
-    for i in range(1,(len(Global.Database))):
-        # Mengecek bahwa database tidak kosong
-        if Global.Database[i] :
-            if Global.Database[i][0] == user and Global.Database[i][1] == password:
-                return True
-        else: # loop akan berhenti ketika menemui list kosong yang menandakan bahwa pengecekan telah selesai
-            break
-    return False
-
+    benar = False
+    for i in range(1,103):
+        if Global.users[i][0] == user and Global.users[i][1] == password:
+                benar = True
+                break
+    return benar
 # Fungsi untuk melakukan pengecekan ketika login dengan suatu username dan password
 def login() :
     global isLoggedIn # Dibuat global agar data telah login tetap tersimpan
