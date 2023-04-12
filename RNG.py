@@ -1,10 +1,17 @@
 import datetime
+time = datetime.datetime.now()
+
+y = time.year
+mn = time.month
+d = time.day
+h = time.hour
+m = time.minute
+s = time.second
+
+seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
 
 def rng():
-    time = datetime.datetime.now()
-    h = time.hour
-    m = time.minute
-    s = time.second
+    global seed
     seed = h*24 + m*60 + s
     num = 0
     lcg = (seed * 134775813 + 1013904223) % 2**16
@@ -20,5 +27,6 @@ def rng():
         num = 4
     elif 54616 <= lcg <= 65536:
         num = 5
+        seed = lcg
     return num
 
