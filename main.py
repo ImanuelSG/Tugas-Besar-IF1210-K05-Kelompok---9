@@ -1,13 +1,17 @@
 import Login
 import Help
+import Exit
 
 keluar = False
-while not keluar:
+while keluar == False :
     command = input(">>> ")
     if command == "login":
         Login.login()
-    elif command == "help":
+    elif command == "help" :
         Help.help() # Fungsi Help
+    elif command == "exit" :
+        Exit.exit()
+        keluar = True
     '''elif command == "logout" :
         logout() # Fungsi Logout
     elif command == "summonjin" :

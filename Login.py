@@ -18,13 +18,13 @@ def split_csv(line) :
     return Temp
 
 # Buka file csv dan melakukan pengisian Database melalui fungsi split_csv
-def read_csv() :
+def read_csv(file) :
     with open("user.csv","r") as file : 
         idx = 0
         for line in file :
             Database[idx] = split_csv(line)
             idx += 1
-
+read_csv("user.csv")
 # Fungsi mengecek apakah username dan password sudah terdaftar
 def isRegistered(user, password):
     for i in range(1,(len(Database))):
