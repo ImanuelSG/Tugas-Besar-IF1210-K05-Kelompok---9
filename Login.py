@@ -1,6 +1,5 @@
 # Untuk Menyimpan Semua Data (Misal Database [0] = ['username','password','role'])
 Database = ["" for i in range(101)]
-
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
     semicolon = 1
@@ -19,11 +18,12 @@ def split_csv(line) :
     return Temp
 
 # Buka file csv dan melakukan pengisian Database melalui fungsi split_csv
-with open("user.csv","r") as file : 
-    idx = 0
-    for line in file :
-        Database[idx] = split_csv(line)
-        idx += 1
+def read_csv() :
+    with open("user.csv","r") as file : 
+        idx = 0
+        for line in file :
+            Database[idx] = split_csv(line)
+            idx += 1
 
 # Fungsi mengecek apakah username dan password sudah terdaftar
 def isRegistered(user, password):
