@@ -1,12 +1,7 @@
+# Untuk Menyimpan Semua Data (Misal Database [0] = ['username','password','role'])
+Database = ["" for i in range(103)]
 
-users = [[""for j in range (3)] for i in range(103)] #Matriks users
-candi = [[""for j in range (5)] for i in range (101)] #Matriks candi
-bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
-jumlahcandi = 0 #Keep track jumlah candi
-jumlahjinpembangun = 0 #Keep track jumlah jinpembangun
-jumlahjinpengumpul = 0 #Keep track jumlah jinpengumpul
-
-# Fungsi untuk membagi file csv menjadi data-datanya
+# Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
     semicolon = 1
     for i in range (len(line)) :
@@ -23,18 +18,9 @@ def split_csv(line) :
             idx += 1
     return Temp
 
-# Buka file csv dan melakukan pengisian Array melalui fungsi split_csv
-def read_csv(file,arr) :
-    with open(file,"r") as file : 
-        idx = 0
-        for line in file :
-            arr[idx] = split_csv(line)
-            idx += 1
-
-def isRegistered(user, password):#Fungsi untuk mengecek apakah user teregister di sistem
-    benar = False
-    for i in range(1,103):
-        if Global.users[i][0] == user and Global.users[i][1] == password:
-                benar = True
-                break
-    return benar
+# Buka file csv dan melakukan pengisian Database melalui fungsi split_csv
+with open("user.csv","r") as file : 
+    idx = 0
+    for line in file :
+        Database[idx] = split_csv(line)
+        idx += 1
