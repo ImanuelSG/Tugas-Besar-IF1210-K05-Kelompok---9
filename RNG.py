@@ -22,4 +22,3 @@ def rng():
         num = 5
     return num
 
-print(rng())
