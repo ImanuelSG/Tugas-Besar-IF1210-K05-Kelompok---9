@@ -1,5 +1,7 @@
 # Untuk Menyimpan Semua Data (Misal Database [0] = ['username','password','role'])
 Database = ["" for i in range(103)]
+Datacandi = ["" for i in range(103)]
+Databahan = ["" for i in range(103)]
 
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
@@ -18,9 +20,16 @@ def split_csv(line) :
             idx += 1
     return Temp
 
-# Buka file csv dan melakukan pengisian Database melalui fungsi split_csv
-with open("user.csv","r") as file : 
-    idx = 0
-    for line in file :
-        Database[idx] = split_csv(line)
-        idx += 1
+# Buka file csv, melakukan pengisian mtx (matrix) melalui fungsi split_csv, lalu mengembalikan matriks
+def read_csv(file,mtx) :
+    with open(file,"r") as file : 
+        idx = 0
+        for line in file :
+            mtx[idx] = split_csv(line)
+            idx += 1
+    return mtx
+
+Database = read_csv("user.csv",Database)
+Datacandi = read_csv("candi.csv",Datacandi)
+Databahan = read_csv("bahan_bangunan.csv",Databahan)
+
