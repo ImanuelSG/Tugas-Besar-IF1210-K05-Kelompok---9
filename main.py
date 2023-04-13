@@ -3,7 +3,9 @@ import Login
 import Help
 import Exit
 import Global
-import Ayamberkokok
+import AyamBerkokok
+import HancurkanCandi
+import SummonJin
 
 from Global import read_csv
 read_csv("user.csv",Global.users)
@@ -30,18 +32,24 @@ while keluar == False :
             print("Silakan menggunakan command 'login' terlebih dahulu")
     elif command == "ayamberkokok" :
         if LoggedIn and Login.user == "Roro" :
-            Ayamberkokok.ayamberkokok() # Fungsi ayam berkokok
+            AyamBerkokok.ayamberkokok() # Fungsi ayam berkokok
         elif Login.user != "Roro" : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
             print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "logout" :
         Logout.logout() # Fungsi Logout
         Login.isLoggedIn = None 
+    elif command == "hancurkancandi" :
+        if LoggedIn and Login.user == "Roro" :
+            HancurkanCandi.hancurkancandi() # Fungsi menghancurkan candi 
+        elif Login.user != "Roro" : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            print("Tidak memiliki izin untuk menggunakan command ini")
+    elif command == "summonjin" :
+        SummonJin.SummonJin() # Fungsi Summon jin
     elif command == "exit" :
         Exit.exit()
         keluar = True
 
-    '''elif command == "summonjin" :
-        summonjin() # Fungsi Summon jin
+    '''
     elif command == "hapusjin" :
         hapusjin() # Fungsi hilangkan jin
     elif command == "ubahjin" :
@@ -56,8 +64,6 @@ while keluar == False :
         laporanjin() # Fungsi mengambil laporan jin
     elif command == "laporancandi" :
         laporancandi() # Fungsi melapor candi
-    elif command == "hancurkancandi" :
-        hancurkancandi() # Fungsi menghancurkan candi
     elif command == "save" :
         save() # Fungsi save
 '''
