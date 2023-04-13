@@ -12,7 +12,6 @@ seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
 
 def rng():
     global seed
-    seed = h*24 + m*60 + s
     num = 0
     lcg = (seed * 134775813 + 1013904223) % 2**16
     if 0 <= lcg <= 10922:
