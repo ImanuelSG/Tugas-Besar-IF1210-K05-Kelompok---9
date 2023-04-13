@@ -22,7 +22,7 @@ def login() :
         user = input("Username : ")
         password = input("Password : ")
         if isRegistered(user, password):
-            print(f"Selamat datang, {user}!")
+            print(f"\n Selamat datang, {user}!")
             print('Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
             isCorrect = True # Ketika True, akan keluar dari loop untuk meminta username dan password
             isLoggedIn = True # Ketika True, user harus melakukan logout agar isLoggedIn menjadi false lalu dapat melakukan login lagi
@@ -31,5 +31,4 @@ def login() :
                 print("Password salah!")
             else: # Username yang dimasukkan tidak terdaftar
                 print("Username tidak terdaftar!")
-
 isLoggedIn = False

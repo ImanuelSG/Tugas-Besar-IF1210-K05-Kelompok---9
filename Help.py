@@ -26,5 +26,3 @@ def help() :
         print("2. bangun \nUntuk membangun candi")
         print("3. kumpul \nUntuk mengumpulkan bahan")
         print("4. exit \nUntuk keluar dari program dan kembali ke terminal")
-
-help ()
