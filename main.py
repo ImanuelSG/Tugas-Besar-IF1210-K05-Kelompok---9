@@ -25,6 +25,7 @@ while keluar == False :
     if command == "login":
         Login.login()
         LoggedIn = True
+        Logout.isLoggedOut = None
     elif LoggedIn == False :
         print("Silakan menggunakan command 'login' terlebih dahulu")
     elif command == "help" :
