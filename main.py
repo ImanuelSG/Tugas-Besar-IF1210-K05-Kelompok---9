@@ -3,11 +3,13 @@ import Login
 import Help
 import Exit
 import Global
+import Ayamberkokok
+
 from Global import read_csv
 read_csv("user.csv",Global.users)
 read_csv("bahan_bangunan.csv",Global.bahan)
 read_csv("candi.csv",Global.candi)
-print (Global.candi)
+
 # Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 import Logout
 
@@ -18,6 +20,7 @@ while keluar == False :
     if command == "login":
         Login.login()
         LoggedIn = True
+        Logout.isLoggedOut = None
     elif LoggedIn == False :
         print("Silakan menggunakan command 'login' terlebih dahulu")
     elif command == "help" :

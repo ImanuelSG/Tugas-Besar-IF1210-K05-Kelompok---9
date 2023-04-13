@@ -1,7 +1,7 @@
 # Untuk Menyimpan Semua Data (Misal Database [0] = ['username','password','role'])
-Database = ["" for i in range(103)]
-Datacandi = ["" for i in range(103)]
-Databahan = ["" for i in range(103)]
+users = ["" for i in range(103)]
+candi = ["" for i in range(103)]
+bahan = ["" for i in range(103)]
 
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
@@ -29,7 +29,7 @@ def read_csv(file,mtx) :
             idx += 1
     return mtx
 
-Database = read_csv("user.csv",Database)
-Datacandi = read_csv("candi.csv",Datacandi)
-Databahan = read_csv("bahan_bangunan.csv",Databahan)
+users = read_csv("user.csv",users)
+candi = read_csv("candi.csv",candi)
+bahan = read_csv("bahan_bangunan.csv",bahan)
 
