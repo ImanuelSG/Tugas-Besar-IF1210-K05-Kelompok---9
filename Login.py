@@ -1,6 +1,7 @@
 import Global
 # Fungsi mengecek apakah username dan password sudah terdaftar
 def isRegistered(user, password):
+    global benar
     benar = False
     for i in range(1,103):
         if Global.users[i][0] == user and Global.users[i][1] == password:
@@ -29,5 +30,3 @@ def login() :
                 print("Password salah!")
             else: # Username yang dimasukkan tidak terdaftar
                 print("Username tidak terdaftar!")
-
-isLoggedIn = False
