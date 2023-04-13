@@ -1,19 +1,22 @@
 # Bagian Import
+import Ayamberkokok
 import Login
 import Help
 import Exit
+import Logout
 import Global
-import AyamBerkokok
-import HancurkanCandi
-import SummonJin
-
+from JinPembangun import JinPembangun
+from HilangkanJin import HilangkanJin
+from SummonJin import SummonJin
+from UbahTipeJin import UbahTipeJin
 from Global import read_csv
+from loadandsave import load
+
+load()
 read_csv("user.csv",Global.users)
 read_csv("bahan_bangunan.csv",Global.bahan)
 read_csv("candi.csv",Global.candi)
-
 # Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
-import Logout
 
 LoggedIn = False
 keluar = False
