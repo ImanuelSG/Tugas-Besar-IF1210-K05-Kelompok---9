@@ -25,6 +25,7 @@ def JinPembangun (pembangun):
             Global.jumlahcandi+=1
         print ("Candi berhasil dibangun")
         print (f"Sisa candi yang perlu dibangun: {100-Global.jumlahcandi}")
+        print (Global.candi)
     else :
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun!")

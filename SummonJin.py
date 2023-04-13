@@ -1,15 +1,18 @@
 import Global
 from Global import read_csv
+
 def lenn(abc):#Function untuk mendapatkan panjang dari suatu str
     length=0
     for i in abc:
         length+=1
     return length
+
 def isValidPassword(abc):#Function untuk menentukan apakah password valid
     if (5<= lenn(abc) <=25):
         return True
     else :
         return False
+    
 def isUniqueUsername(abc,list):#Function untuk menentukan apakah username yang dimasukkan unique
     i=1
     unique = True
@@ -21,6 +24,7 @@ def isUniqueUsername(abc,list):#Function untuk menentukan apakah username yang d
             break
         i+=1  
     return unique
+
 def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi kosong
     i=0
     while list[i]!=['','','']:
@@ -28,6 +32,7 @@ def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi
         if i == N:
             break
     return i
+
 def isRegistered(user, password):
     benar = False
     for i in range(1,103):
@@ -35,6 +40,7 @@ def isRegistered(user, password):
                 benar = True
                 break
     return benar
+
 def SummonJin ():
     if (Global.jumlahjinpembangun + Global.jumlahjinpengumpul <= 100):
         print(f"Jenis jin yang dapat dipanggil:")

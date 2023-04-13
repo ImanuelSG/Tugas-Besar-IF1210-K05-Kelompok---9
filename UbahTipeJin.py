@@ -31,10 +31,3 @@ def UbahTipeJin():
                 Global.jumlahjinpembangun-=1
                 Global.jumlahjinpengumpul+=1
                 print ("b")
-read_csv("user.csv",Global.users)
-read_csv("bahan_bangunan.csv",Global.bahan)
-read_csv("candi.csv",Global.candi)
-while True:
-    SummonJin()
-    UbahTipeJin()
-    print (Global.users)

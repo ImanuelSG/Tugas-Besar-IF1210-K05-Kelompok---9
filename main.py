@@ -7,6 +7,8 @@ import AyamBerkokok
 import HancurkanCandi
 import SummonJin
 import JinPembangun
+import HilangkanJin
+import UbahTipeJin
 
 from Global import read_csv
 read_csv("user.csv",Global.users)
@@ -45,18 +47,24 @@ while keluar == False :
         elif Login.user != "Roro" : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
             print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "summonjin" :
-        SummonJin.SummonJin() # Fungsi Summon jin
+        if LoggedIn and Login.user == "Bondowoso" :
+            SummonJin.SummonJin() # Fungsi Summon jin
+        elif Login.user != "Bondowoso" : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "bangun" :
-        JinPembangun.JinPembangun() # Fungsi bangun jin
+        if LoggedIn and Global.users[Login.id][2]=="jin_pembangun":
+            JinPembangun.JinPembangun(Global.users[Login.id][1]) # Fungsi bangun jin
+        else: # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok  
+            print("Tidak memiliki izin untuk menggunakan command ini")
+    elif command == "hapusjin" :
+        HilangkanJin.HilangkanJin() # Fungsi hilangkan jin
+    elif command == "ubahjin" :
+        UbahTipeJin.UbahTipeJin() # Fungsi ubah jin
     elif command == "exit" :
         Exit.exit()
         keluar = True
     
     '''
-    elif command == "hapusjin" :
-        hapusjin() # Fungsi hilangkan jin
-    elif command == "ubahjin" :
-        ubahjin() # Fungsi ubah jin
     elif command == "kumpul" :
         jinpengumpul() # Fungsi kumpul jin
     elif command == "batchkumpul" :

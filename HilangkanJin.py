@@ -6,6 +6,7 @@ def isRegisteredJin(user):
                 benar = i
                 break
     return benar
+
 def HilangkanJin ():
     username = input ("Masukkan username jin : ")
     tanda = isRegisteredJin(username)
