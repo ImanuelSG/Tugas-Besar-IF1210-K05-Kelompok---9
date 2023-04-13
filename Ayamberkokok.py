@@ -7,7 +7,7 @@ def ayamberkokok() :
     inIndex = True # Untuk flag bahwa looping dibawah masih dalam range
     i = 0
     while inIndex == True :
-        if Global.Datacandi[i] != "" :
+        if Global.candi[i] != "" :
             count += 1
             i += 1
         else : # Datacandi kosong

@@ -29,11 +29,3 @@ def read_csv(file,arr) :
         for line in file :
             arr[idx] = split_csv(line)
             idx += 1
-
-def isRegistered(user, password):#Fungsi untuk mengecek apakah user teregister di sistem
-    benar = False
-    for i in range(1,103):
-        if Global.users[i][0] == user and Global.users[i][1] == password:
-                benar = True
-                break
-    return benar
