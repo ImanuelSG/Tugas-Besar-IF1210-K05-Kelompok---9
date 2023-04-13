@@ -4,10 +4,11 @@ def isRegistered(user, password):
     global benar
     benar = False
     for i in range(1,103):
-        if Global.users[i][0] == user and Global.users[i][1] == password:
+        if Global.users[i] != "" and Global.users[i][0] == user and Global.users[i][1] == password :
                 benar = True
                 break
     return benar
+
 # Fungsi untuk melakukan pengecekan ketika login dengan suatu username dan password
 def login() :
     global isLoggedIn # Dibuat global agar data telah login tetap tersimpan
@@ -26,7 +27,7 @@ def login() :
             isCorrect = True # Ketika True, akan keluar dari loop untuk meminta username dan password
             isLoggedIn = True # Ketika True, user harus melakukan logout agar isLoggedIn menjadi false lalu dapat melakukan login lagi
         else:
-            if any([user == Global.Database[i][0] for i in range(1,(len(Global.Database))) if Global.Database[i] != ""]): # Jika username ada tetapi password salah
+            if any([user == Global.users[i][0] for i in range(1,(len(Global.users))) if Global.users[i] != ""]): # Jika username ada tetapi password salah
                 print("Password salah!")
             else: # Username yang dimasukkan tidak terdaftar
                 print("Username tidak terdaftar!")
