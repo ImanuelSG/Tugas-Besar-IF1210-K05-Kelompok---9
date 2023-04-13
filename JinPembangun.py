@@ -29,10 +29,5 @@ def JinPembangun (pembangun):
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun!")
 
-read_csv("user.csv",Global.users)
-read_csv("bahan_bangunan.csv",Global.bahan)
-read_csv("candi.csv",Global.candi)
-JinPembangun("")
-print (Global.candi)
 
 

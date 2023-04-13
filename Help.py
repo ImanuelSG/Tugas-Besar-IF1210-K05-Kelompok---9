@@ -1,6 +1,5 @@
 # Fungsi untuk help
 import Login
-
 def help() :
     if Login.isLoggedIn == False :
         print("Daftar command yang dapat dipakai adalah:")

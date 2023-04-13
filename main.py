@@ -1,23 +1,18 @@
 # Bagian Import
-import Ayamberkokok
 import Login
 import Help
 import Exit
-import Logout
 import Global
-from JinPembangun import JinPembangun
-from HilangkanJin import HilangkanJin
-from SummonJin import SummonJin
-from UbahTipeJin import UbahTipeJin
+import AyamBerkokok
+import HancurkanCandi
+import SummonJin
+import Logout
 from Global import read_csv
-from loadandsave import load
-
-load()
 read_csv("user.csv",Global.users)
 read_csv("bahan_bangunan.csv",Global.bahan)
 read_csv("candi.csv",Global.candi)
-# Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 
+# Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 LoggedIn = False
 keluar = False
 while keluar == False :
@@ -51,14 +46,13 @@ while keluar == False :
     elif command == "exit" :
         Exit.exit()
         keluar = True
-
+    
     '''
     elif command == "hapusjin" :
         hapusjin() # Fungsi hilangkan jin
     elif command == "ubahjin" :
         ubahjin() # Fungsi ubah jin
-    elif command == "bangun" :
-        jinpembangun() # Fungsi bangun jin
+
     elif command == "kumpul" :
         jinpengumpul() # Fungsi kumpul jin
     elif command == "batchkumpul" :

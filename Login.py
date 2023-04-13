@@ -31,3 +31,5 @@ def login() :
                 print("Password salah!")
             else: # Username yang dimasukkan tidak terdaftar
                 print("Username tidak terdaftar!")
+
+isLoggedIn = False
