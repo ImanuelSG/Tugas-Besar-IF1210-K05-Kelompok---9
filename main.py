@@ -8,10 +8,6 @@ import HancurkanCandi
 import SummonJin
 import JinPembangun
 
-from Global import read_csv
-read_csv("user.csv",Global.users)
-read_csv("bahan_bangunan.csv",Global.bahan)
-read_csv("candi.csv",Global.candi)
 
 # Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 import Logout

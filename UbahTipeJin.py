@@ -1,7 +1,6 @@
 import Global
 from SummonJin import SummonJin
 import HilangkanJin
-from Global import read_csv
 def isRegisteredJin(user):
     benar = 999
     for i in range(3,103):
@@ -25,16 +24,7 @@ def UbahTipeJin():
                 Global.users[posisi][2] = 'jin_pembangun'
                 Global.jumlahjinpembangun+=1
                 Global.jumlahjinpengumpul-=1
-                print ("a")
             else :
                 Global.users[posisi][2] = 'jin_pengumpul'
                 Global.jumlahjinpembangun-=1
                 Global.jumlahjinpengumpul+=1
-                print ("b")
-read_csv("user.csv",Global.users)
-read_csv("bahan_bangunan.csv",Global.bahan)
-read_csv("candi.csv",Global.candi)
-while True:
-    SummonJin()
-    UbahTipeJin()
-    print (Global.users)

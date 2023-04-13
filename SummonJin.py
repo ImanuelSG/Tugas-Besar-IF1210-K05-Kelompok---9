@@ -1,5 +1,5 @@
 import Global
-from Global import read_csv
+
 def lenn(abc):#Function untuk mendapatkan panjang dari suatu str
     length=0
     for i in abc:

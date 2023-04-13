@@ -1,6 +1,6 @@
 import argparse
 import os
-
+from Global import read_csv
 
 def load ():
     parser = argparse.ArgumentParser()

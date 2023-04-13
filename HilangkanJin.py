@@ -13,7 +13,7 @@ def HilangkanJin ():
         print ("Tidak ada jin dengan username tersebut")
     else :
         pilihan = input ((f"Apakah anda yakin ingin menghapus jin dengan username {username} (Y/N)?"))
-        if pilihan == "Y":
+        if pilihan == "Y" or pilihan == "y":
             if Global.users[tanda][2] == "jin_pengumpul":
                 Global.jumlahjinpengumpul-=1 
             else : 
