@@ -8,7 +8,7 @@ h = time.hour
 m = time.minute
 s = time.second
 seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
-def rng():
+def rng(): #rng untuk mengumpul
     global seed
     num = 0
     seed = (seed * 134775813 + 1013904223) % 2**16
@@ -26,7 +26,7 @@ def rng():
         num = 5
     return num
 
-def rngb():
+def rngb(): #rng untuk membangun
     global seed
     num = 0
     seed = (seed * 134775813 + 1013904223) % 2**16
