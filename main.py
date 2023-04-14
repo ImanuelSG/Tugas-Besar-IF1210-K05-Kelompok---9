@@ -10,11 +10,11 @@ import JinPembangun
 import HilangkanJin
 import UbahTipeJin
 from loadandsave import load
+from loadandsave import save
 # Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 import Logout
 load()
-print (Global.users)
-print (SummonJin.getsmallestindex(Global.users, 102))
+
 LoggedIn = False
 keluar = False
 while keluar == False :
@@ -60,6 +60,8 @@ while keluar == False :
         HilangkanJin.HilangkanJin() # Fungsi hilangkan jin
     elif command == "ubahjin" :
         UbahTipeJin.UbahTipeJin() # Fungsi ubah jin
+    elif command == "save" :
+        save() # Fungsi save
 
     
     '''
@@ -71,6 +73,4 @@ while keluar == False :
         laporanjin() # Fungsi mengambil laporan jin
     elif command == "laporancandi" :
         laporancandi() # Fungsi melapor candi
-    elif command == "save" :
-        save() # Fungsi save
 '''

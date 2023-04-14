@@ -33,4 +33,4 @@ def login() :
         else:#Jika username tidak ada
             print("Username tidak terdaftar!")
 isLoggedIn = False
-id = "a"
+id = "a" # Hanya dummy
