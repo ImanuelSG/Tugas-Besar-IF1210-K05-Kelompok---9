@@ -3,7 +3,8 @@ import os
 import Global
 from Global import read_csv,getbiggestindex,read_csv_candi
 
-def load ():
+# Fungsi untuk melakukan load
+def load():
     parser = argparse.ArgumentParser()
     parser.add_argument("nama_folder", help="Nama Folder yang akan di load" ,nargs='?')
     args = parser.parse_args()

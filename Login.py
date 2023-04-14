@@ -1,5 +1,5 @@
 import Global
-# Fungsi mengecek apakah username dan password sudah terdaftar
+# Fungsi mengecek apakah username sudah terdaftar
 def isRegistered(user):
     benar = 999
     for i in range(1,103):
@@ -33,4 +33,4 @@ def login() :
         else:#Jika username tidak ada
             print("Username tidak terdaftar!")
 isLoggedIn = False
-id = "a"
+id = "a" # Hanya dummy

@@ -9,6 +9,7 @@ def remove_IDcandi(candi, IDdiHapus):
             break
     return candi
 
+# Fungsi untuk mengecek apakah ID dari candi yang dimasukkan ada atau tidak
 def isRegisteredCandi(IDcandi) :
     benar = 999
     for i in range(1,101) :

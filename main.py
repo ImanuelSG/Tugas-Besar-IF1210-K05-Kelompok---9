@@ -14,6 +14,7 @@ from loadandsave import load,save # Fungsi untuk membagi file csv menjadi userna
 
 load()
 
+
 LoggedIn = False
 keluar = False
 while keluar == False :
@@ -71,5 +72,4 @@ while keluar == False :
         laporanjin() # Fungsi mengambil laporan jin
     elif command == "laporancandi" :
         laporancandi() # Fungsi melapor candi
-) # Fungsi save
 '''
