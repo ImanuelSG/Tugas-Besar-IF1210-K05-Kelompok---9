@@ -1,14 +1,21 @@
 import Global
 
+# Fungsi untuk menghitung banyak candi dalam matrix candi
+def banyak_candi(candi) :
+    count = 0
+    for row in candi :
+            count += 1
+    return count
 
 # Fungsi untuk menghapus candi dari matriks candi
 def remove_IDcandi(candi, IDdiHapus):
-    for i in range(len(candi)):
+    for i in range(banyak_candi(candi)):
         if candi[i] == IDdiHapus:
             candi[i] = ""
             break
     return candi
 
+# Fungsi untuk mengecek apakah ID dari candi yang dimasukkan ada atau tidak
 def isRegisteredCandi(IDcandi) :
     benar = False
     for i in range(100) :
