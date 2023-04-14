@@ -1,5 +1,4 @@
 import Global
-import sys
 
 def ayamberkokok() :
     print("Kukuruyuk.. Kukuruyuk..\n")
@@ -18,7 +17,7 @@ def ayamberkokok() :
         print("Selamat, Roro Jonggrang memenangkan permainan!\n")
         print("*Bandung Bondowoso angry noise*\n")
         print("Roro Jonggrang dikutuk jadi candi")
-        exit()
+        quit()
     else : # count >= 100
         print("Yah, Bandung Bondowoso memenangkan permainan")
-        exit()
+        quit()
