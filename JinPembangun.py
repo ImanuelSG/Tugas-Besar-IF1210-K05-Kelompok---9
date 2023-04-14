@@ -4,7 +4,7 @@ from Global import read_csv
 
 def getsmallestcandi(list,N):#Function untuk mendapatkan indexterkecil candi yang masi kosong
     i=0
-    while list[i]!=['','','','','']:
+    while list[i][0]!='':
         i+=1
         if i == N:
             break
@@ -25,6 +25,7 @@ def JinPembangun (pembangun):
             Global.jumlahcandi+=1
         print ("Candi berhasil dibangun")
         print (f"Sisa candi yang perlu dibangun: {100-Global.jumlahcandi}")
+        print (Global.candi)
     else :
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun!")
