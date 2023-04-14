@@ -1,5 +1,5 @@
 import Global
-# Fungsi mengecek apakah username dan password sudah terdaftar
+# Fungsi mengecek apakah username sudah terdaftar
 def isRegistered(user):
     benar = 999
     for i in range(1,103):

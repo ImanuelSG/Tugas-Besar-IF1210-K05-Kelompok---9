@@ -3,7 +3,8 @@ import os
 import Global
 from Global import read_csv
 
-def load ():
+# Fungsi untuk melakukan load
+def load():
     parser = argparse.ArgumentParser()
     parser.add_argument("nama_folder", help="Nama Folder yang akan di load" ,nargs='?')
     args = parser.parse_args()
@@ -29,7 +30,9 @@ def load ():
             print ("\n")
             print (f'Folder "{nama_folder}" tidak ditemukan.')
             quit()
-def save ():
+
+# Fungsi untuk melakukan save
+def save():
     global fulldir
     mainfolder_name = "save"
     subfolder_name = str (input("Masukkan nama folder: "))
