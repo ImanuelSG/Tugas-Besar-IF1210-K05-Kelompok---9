@@ -9,12 +9,11 @@ import SummonJin
 import JinPembangun
 import HilangkanJin
 import UbahTipeJin
-from loadandsave import load
-# Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
 import Logout
+from loadandsave import load,save # Fungsi untuk membagi file csv menjadi username, password, roleimport Ayamberkokok
+
 load()
-print (Global.users)
-print (SummonJin.getsmallestindex(Global.users, 102))
+
 LoggedIn = False
 keluar = False
 while keluar == False :
@@ -53,14 +52,15 @@ while keluar == False :
             print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "bangun" :
         if LoggedIn and Global.users[Login.id][2]=="jin_pembangun":
-            JinPembangun.JinPembangun(Global.users[Login.id][1]) # Fungsi bangun jin
+            JinPembangun.JinPembangun(Global.users[Login.id][0]) # Fungsi bangun jin
         else: # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok  
             print("Tidak memiliki izin untuk menggunakan command ini")
     elif command == "hapusjin" :
         HilangkanJin.HilangkanJin() # Fungsi hilangkan jin
     elif command == "ubahjin" :
         UbahTipeJin.UbahTipeJin() # Fungsi ubah jin
-
+    elif command == "save" :
+        save()
     
     '''
     elif command == "kumpul" :
@@ -71,6 +71,5 @@ while keluar == False :
         laporanjin() # Fungsi mengambil laporan jin
     elif command == "laporancandi" :
         laporancandi() # Fungsi melapor candi
-    elif command == "save" :
-        save() # Fungsi save
+) # Fungsi save
 '''

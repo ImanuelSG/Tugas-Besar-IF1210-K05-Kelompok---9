@@ -1,5 +1,4 @@
 # Fungsi Logout
-
 def logout():
     global isLoggedOut
     if isLoggedOut == True : # User belum melakukan login

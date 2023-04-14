@@ -1,13 +1,7 @@
 import Global
-from SummonJin import SummonJin
 import HilangkanJin
-def isRegisteredJin(user):
-    benar = 999
-    for i in range(3,103):
-        if Global.users[i][0] == user:
-                benar = i
-                break
-    return benar
+from Global import isRegisteredJin
+
 def UbahTipeJin():
     username = input("Masukkan username jin : ")
     posisi = isRegisteredJin(username)
@@ -22,9 +16,5 @@ def UbahTipeJin():
         if pilihan == 'Y':
             if Global.users[posisi][2] == 'jin_pengumpul':
                 Global.users[posisi][2] = 'jin_pembangun'
-                Global.jumlahjinpembangun+=1
-                Global.jumlahjinpengumpul-=1
             else :
                 Global.users[posisi][2] = 'jin_pengumpul'
-                Global.jumlahjinpembangun-=1
-                Global.jumlahjinpengumpul+=1

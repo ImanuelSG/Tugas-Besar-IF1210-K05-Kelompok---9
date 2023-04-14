@@ -1,17 +1,11 @@
 import Global
 
-def lenn(abc):#Function untuk mendapatkan panjang dari suatu str
-    length=0
-    for i in abc:
-        length+=1
-    return length
-
-def isValidPassword(abc):#Function untuk menentukan apakah password valid
-    if (5<= lenn(abc) <=25):
+def isValidPassword(password):#Function untuk menentukan apakah password valid
+    if (5<= len(password) <=25):
         return True
     else :
         return False
-    
+
 def isUniqueUsername(abc,list):#Function untuk menentukan apakah username yang dimasukkan unique
     i=1
     unique = True
@@ -32,16 +26,22 @@ def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi
             break
     return i
 
-def isRegistered(user, password):
-    benar = False
-    for i in range(1,103):
-        if Global.users[i][0] == user and Global.users[i][1] == password:
-                benar = True
-                break
-    return benar
+def getNumJinPengumpul(list):
+    count = 0
+    for i in range (3,103):
+        if list[i][2] == "jin_pengumpul":
+            count +=1
+    return count
+
+def getNumJinPembangun(list):
+    count = 0
+    for i in range (3,103):
+        if list[i][2] == "jin_pembangun":
+            count +=1
+    return count
 
 def SummonJin ():
-    if (Global.jumlahjinpembangun + Global.jumlahjinpengumpul <= 100):
+    if (getNumJinPembangun(Global.users) +getNumJinPengumpul(Global.users)<= 100):
         print(f"Jenis jin yang dapat dipanggil:")
         print(f"(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
         print (f"(2) Pembangun - Bertugas membangun candi \n")
@@ -54,10 +54,8 @@ def SummonJin ():
             print ("")
         if pilihan == 1 :
             print (f'Memilih jin "Pengumpul".')
-            Global.jumlahjinpengumpul+=1
         else :
             print (f'Memilih jin "Pembangun".')
-            Global.jumlahjinpembangun+=1
         namajin=(input(("Masukkan username jin: ")))
         while not isUniqueUsername(namajin,Global.users):
             print (f'Username "{namajin}" sudah diambil! \n')
@@ -81,6 +79,3 @@ def SummonJin ():
             Global.users[n][2]="jin_pembangun"
     else :
         print (f"Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
-
-
-

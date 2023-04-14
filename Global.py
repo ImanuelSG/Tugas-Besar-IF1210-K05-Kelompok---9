@@ -1,9 +1,6 @@
 users = [[""for j in range (3)] for i in range(103)] #Matriks users
 candi = [[""for j in range (5)] for i in range (101)] #Matriks candi
 bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
-jumlahcandi = 0 #Keep track jumlah candi
-jumlahjinpembangun = 0 #Keep track jumlah jinpembangun
-jumlahjinpengumpul = 0 #Keep track jumlah jinpengumpul
 
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
@@ -29,3 +26,36 @@ def read_csv(file,arr) :
         for line in file :
             arr[idx] = split_csv(line)
             idx += 1
+
+def read_csv_candi(file,arr):#
+    with open(file,"r") as file : 
+        idx = 0
+        for line in file :
+            if idx!= 0:
+                if split_csv(line)[0]!='':
+                    for j in range (5):
+                        if j == 1 :
+                            arr[idx][j]= split_csv(line)[j]
+                        else :
+                            arr[idx][j]= int(split_csv(line)[j])
+                else:
+                    arr[idx] = split_csv(line)
+            else:
+                arr[idx] = split_csv(line)
+            idx += 1
+
+def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array
+    for i in range (N,-1,-1):
+        if arr[i][0]!='':
+            hasil = i
+            break
+    return hasil
+
+
+def isRegisteredJin(user):#Untuk mengecek apakah jin tergeistrasi dan mengembalikan indexnya jika memang ada
+    benar = 999
+    for i in range(3,103):
+        if Global.users[i][0] == user:
+                benar = i
+                break
+    return benar
