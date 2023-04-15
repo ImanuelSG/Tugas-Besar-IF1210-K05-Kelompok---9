@@ -1,9 +1,16 @@
 import Global
-from HancurkanCandi import banyak_candi
 
 def ayamberkokok() :
     print("Kukuruyuk.. Kukuruyuk..\n")
-    count = banyak_candi(Global.candi)
+    count = 0 # Untuk menghitung banyak candi yang ada
+    inIndex = True # Untuk flag bahwa looping dibawah masih dalam range
+    i = 0
+    while inIndex == True :
+        if Global.candi[i] != "" :
+            count += 1
+            i += 1
+        else : # Datacandi kosong
+            inIndex = False
     print(f"Jumlah candi: {count}\n")
 
     if count < 100 :

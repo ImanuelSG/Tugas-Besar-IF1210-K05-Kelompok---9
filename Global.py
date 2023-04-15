@@ -55,7 +55,7 @@ def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array
 def isRegisteredJin(user):#Untuk mengecek apakah jin tergeistrasi dan mengembalikan indexnya jika memang ada
     benar = 999
     for i in range(3,103):
-        if Global.users[i][0] == user:
+        if users[i][0] == user:
                 benar = i
                 break
     return benar
