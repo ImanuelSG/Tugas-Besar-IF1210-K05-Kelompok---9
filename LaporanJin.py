@@ -6,7 +6,9 @@
 
 import Global
 from Global import read_csv
-
+from JinPembangun import JinPembangun
+from JinPengumpul import kumpul
+from Login import user
 
 def laporanjin():
     pasir = Global.bahan[1][2]
@@ -20,7 +22,7 @@ def laporanjin():
     totaljinb = 0
     totaljink = 0
     
-    if user != Global.user[1][0]:
+    if user != Global.users[1][0]:
         print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
     else:
         for i in range(1,101):
@@ -46,8 +48,8 @@ def laporanjin():
                     listbangun[0][i] = delb
                     i += 1
                     for j in range(j,101):
-                    if tempcandi[j][1] == delb:
-                        tempcandi[j][1] = ""
+                        if tempcandi[j][1] == delb:
+                            tempcandi[j][1] = ""
 
             tempcandi = Global.candi
 
@@ -87,9 +89,9 @@ def laporanjin():
         tempcandi = Global.candi
         
         for k in range(3,103):
-            if tempuser[k][2] == Jin_Pembangun
+            if tempuser[k][2] == JinPembangun :
                 totaljinb += 1
-            elif tempuser[k][2] == Jin_Pengumpul
+            elif tempuser[k][2] == kumpul :
                 totaljink += 1
         totaljin = totaljinb + totaljink
 

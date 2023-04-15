@@ -6,6 +6,10 @@
 
 import Global
 from Global import read_csv
+from Login import user
+from AyamBerkokok import ayamberkokok
+
+harga = 0
 
 def laporancandi():
     tempcandi = Global.candi
@@ -22,7 +26,7 @@ def laporancandi():
             if tempcandi[i][0] != "":
                 totalcandi += 1
                 
-        if total candi == 0:
+        if ayamberkokok().count == 0 :
             print("> Total Candi: 0")
             print("> Total Pasir yang digunakan: 0")
             print("> Total Batu yang digunakan: 0")
