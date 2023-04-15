@@ -44,7 +44,7 @@ def read_csv_candi(file,arr):#
                 arr[idx] = split_csv(line)
             idx += 1
 
-def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array
+def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array yang terisi
     for i in range (N,-1,-1):
         if arr[i][0]!='':
             hasil = i
