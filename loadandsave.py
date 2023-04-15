@@ -1,7 +1,7 @@
 import argparse
 import os
 import Global
-from Global import read_csv,getbiggestindex,read_csv_candi
+from Global import read_csv,getbiggestindex,read_csv_candi,read_csv_bahan
 
 # Fungsi untuk melakukan load
 def load():
@@ -23,7 +23,7 @@ def load():
             print ("\n")
             print ('Selamat datang di program "Manajerial Candi"')
             print ("Silahkan masukkan username Anda")
-            read_csv(os.path.join(file_path,"bahan_bangunan.csv"), Global.bahan)
+            read_csv_bahan(os.path.join(file_path,"bahan_bangunan.csv"), Global.bahan)
             read_csv(os.path.join(file_path,"user.csv"), Global.users)
             read_csv_candi(os.path.join(file_path,"candi.csv"), Global.candi)
         else :

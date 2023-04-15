@@ -1,5 +1,5 @@
 import Global
-# Fungsi mengecek apakah username sudah terdaftar
+# Fungsi mengecek apakah username sudah terdaftar dan mengembalikan posisi indeks dari user (untuk track jenis user)
 def isRegistered(user):
     benar = 999
     for i in range(1,103):

@@ -7,7 +7,6 @@ def logout():
     else : # User akan melakukan logout
         print("Anda telah logout dari akun")    
     isLoggedOut = True # Ketika isLoggedOut = False maka user keluar dari akun
-    
 
 isLoggedOut = False # Inisialisasi bahwa belum terjadinya logout
 

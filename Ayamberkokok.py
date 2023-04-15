@@ -1,9 +1,9 @@
 import Global
-from HancurkanCandi import banyak_candi
+from JinPembangun import getjumlahcandi
 
 def ayamberkokok() :
     print("Kukuruyuk.. Kukuruyuk..\n")
-    count = banyak_candi(Global.candi)
+    count = getjumlahcandi(Global.candi)
     print(f"Jumlah candi: {count}\n")
 
     if count < 100 :

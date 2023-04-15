@@ -1,6 +1,5 @@
 import Global
 from RNG import rng
-from Global import read_csv
 
 def getsmallestcandi(list):#Function untuk mendapatkan indexterkecil candi yang masi kosong
     i=0
@@ -9,6 +8,7 @@ def getsmallestcandi(list):#Function untuk mendapatkan indexterkecil candi yang 
         if i == 100:
             break
     return i
+    
 def getjumlahcandi(list):#Function untuk mendapatkan jumlahcandi yang sudah dibangun
     count=0
     for i in range (1,101):

@@ -13,4 +13,3 @@ def HilangkanJin ():
             for i in range (101):
                 if Global.candi[i][1] == username:
                     Global.candi[i] =["","","","",""]
-
