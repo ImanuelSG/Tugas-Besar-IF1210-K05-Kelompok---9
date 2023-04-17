@@ -17,9 +17,9 @@ def getjumlahcandi(list):#Function untuk mendapatkan jumlahcandi yang sudah diba
     return count
 
 def JinPembangun (pembangun):
-    pasir = rng()
-    batu = rng()
-    air = rng()
+    pasir = rngb()
+    batu = rngb()
+    air = rngb()
     if (int(Global.bahan[1][2]) >= pasir and int(Global.bahan[2][2]) >= batu and int(Global.bahan[3][2]) >= air):
         for i in range (1,4):
             temp = int(Global.bahan[i][2])

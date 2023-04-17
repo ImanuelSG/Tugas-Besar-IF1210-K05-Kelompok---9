@@ -15,24 +15,22 @@ def laporanjin():
     for i in range (103):
         for j in range (3):
             tempuser[i][j] = Global.users[i][j]
-    tempcandi = [["" for i in range (5)] for j in range (101)]  
+    tempcandi = [["" for i in range (5)] for j in range (101)]
     for i in range (101):
         for j in range (5):
             tempcandi[i][j] = Global.candi[i][j]
-    delb = ""
+    delb = ''
     unique = 0
     jumlahbangun = 0
     totaljinb = 0
     totaljink = 0
-    for i in range(1,101):
-        if tempcandi[i][1] != "":
-            delb = tempcandi[i][1]
+    for i in range(3,103):
+        if tempuser[i][0] != '' and tempuser[i][2] == "jin_pembangun":
+            delb = tempuser[i][0]
             unique += 1
-            for j in range(i,101):
-                if tempcandi[j][1] == delb:
-                    tempcandi[j][1] = ""        
-    print (unique) 
-    print (tempcandi)
+            for j in range(3,103):
+                if tempuser[j][0] == delb:
+                    tempuser[j][0] = ''             
     if unique > 0:
     
         listbangun = [["" for k in range(unique)],[0 for l in range(unique)]]
@@ -41,14 +39,21 @@ def laporanjin():
         k = 0
         l = 0
 
-        for j in range(1,101):
-            if tempcandi[j][1] != "":
-                delb = tempcandi[j][1]
-                listbangun[0][i] = delb
-                i += 1
-                for j in range(j,101):
-                    if tempcandi[j][1] == delb:
-                        tempcandi[j][1] = ""
+        for i in range (103):
+            for j in range (3):
+                tempuser[i][j] = Global.users[i][j]
+
+        i = 0
+        j = 0
+        
+        for i in range(3,103):
+            if tempuser[i][0] != '' and tempuser[i][2] == "jin_pembangun":
+                delb = tempuser[i][0]
+                listbangun[0][j] = delb
+                j += 1
+                for k in range(3,103):
+                    if tempuser[k][0] == delb:
+                        tempuser[k][0] = ''
 
 
         for k in range(unique):
@@ -57,7 +62,7 @@ def laporanjin():
                     jumlahbangun += 1
             listbangun[1][k] = jumlahbangun
             jumlahbangun = 0
-
+            
         i = 0
         j = 0
         k = 0
@@ -101,7 +106,7 @@ def laporanjin():
     print("> Jumlah Pasir: "+ str(pasir) +" unit")
     print("> Jumlah Air: "+ str(air)+" unit")
     print("> Jumlah Batu: "+ str(batu) +" unit")
-   
+    return
             
 
 

@@ -1,3 +1,14 @@
+import datetime
+time = datetime.datetime.now()
+
+y = time.year
+mn = time.month
+d = time.day
+h = time.hour
+m = time.minute
+s = time.second
+seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
+
 users = [[""for j in range (3)] for i in range(103)] #Matriks users
 candi = [[""for j in range (5)] for i in range (101)] #Matriks candi
 bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
@@ -35,9 +46,9 @@ def read_csv_candi(file,arr):#
                 if split_csv(line)[0]!='':
                     for j in range (5):
                         if j == 1 :
-                            arr[idx][j]= split_csv(line)[j]
+                            arr[int(split_csv(line)[0])][j]= split_csv(line)[j]
                         else :
-                            arr[idx][j]= int(split_csv(line)[j])
+                            arr[int(split_csv(line)[0])][j]= int(split_csv(line)[j])
                 else:
                     arr[idx] = split_csv(line)
             else:

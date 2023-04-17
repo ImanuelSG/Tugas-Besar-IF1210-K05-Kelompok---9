@@ -16,9 +16,11 @@ from LaporanJin import laporanjin
 from JinPembangun import JinPembangun
 from JinPengumpul import JinPengumpul
 
+
 load()
 LoggedIn = False
 keluar = False
+print(Global.candi)
 while keluar == False :
     command = input(">>> ")
     if command == "login":
@@ -30,6 +32,8 @@ while keluar == False :
         keluar = True
     elif command == "help" and LoggedIn==False:
         Help(0)
+    elif command == "save" :
+            save()
     elif LoggedIn == False :
         print("Silakan menggunakan command 'login' terlebih dahulu")
     else : #Jika Sudah login
@@ -107,7 +111,7 @@ while keluar == False :
 
         elif command == "kumpul" :
             if Global.users[Login.id][2]=="jin_pengumpul":
-                jinpengumpul() # Fungsi kumpul jin
+                JinPengumpul() # Fungsi kumpul jin
             else: 
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
@@ -117,9 +121,6 @@ while keluar == False :
             LoggedIn = False
             Login.isLoggedIn = None 
 
-
-        elif command == "save" :
-            save()
 
         else :
             print ('Command tidak ditemukan, silahkan run command "help" untuk melihat daftar command yang dapat digunakan')

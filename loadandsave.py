@@ -46,6 +46,22 @@ def matrixtocsv(matrix, filename,N,k):
             else:
                 file.write(row_str)
 
+def matrixtocsvril(matrix, filename,N,k):
+    with open(filename, "w") as file:
+        iteration = Global.getbiggestindex(matrix, N)
+        for i in range(iteration+1):
+            row_str = ""
+            if matrix[i][0]!= "":
+                for j in range(k):
+                    if j == 0:
+                        row_str += str(matrix[i][j])
+                    else:
+                        row_str += ";" + str(matrix[i][j])
+                if i!=iteration:
+                    file.write(row_str + "\n")
+                else:
+                    file.write(row_str)
+
 def save ():
     global fulldir
     mainfolder_name = "save"
@@ -74,6 +90,6 @@ def save ():
         print ("Saving...")
         print ("\n")
         print (f"Berhasil menyimpan data di folder {fulldir}!")
-    matrixtocsv(Global.users,os.path.join(fulldir,"user.csv"),102,3)#Mengubah matrix users ke path yang ada , 102 = banyak index baris matrix, 3 = banyak kolom matrix
-    matrixtocsv(Global.candi,os.path.join(fulldir,"candi.csv"),100,5)#Mengubah matrix users ke path yang ada , 102 = banyak baris matrix, 3 = banyak kolom matrix
+    matrixtocsvril(Global.users,os.path.join(fulldir,"user.csv"),102,3)#Mengubah matrix users ke path yang ada , 102 = banyak index baris matrix, 3 = banyak kolom matrix
+    matrixtocsvril(Global.candi,os.path.join(fulldir,"candi.csv"),100,5)#Mengubah matrix users ke path yang ada , 102 = banyak baris matrix, 3 = banyak kolom matrix
     matrixtocsv(Global.bahan,os.path.join(fulldir,"bahan_bangunan.csv"),3,3)#Mengubah matrix users ke path yang ada , 102 = banyak baris matrix, 3 = banyak kolom matrix
