@@ -29,9 +29,10 @@ def laporanjin():
             delb = tempcandi[i][1]
             unique += 1
             for j in range(i,101):
-                if tempcandi[i][1] == delb:
-                    tempcandi[i][1] = ""
-                    
+                if tempcandi[j][1] == delb:
+                    tempcandi[j][1] = ""        
+    print (unique) 
+    print (tempcandi)
     if unique > 0:
     
         listbangun = [["" for k in range(unique)],[0 for l in range(unique)]]
@@ -70,6 +71,7 @@ def laporanjin():
                     temp0 = listbangun[0][i]
                     listbangun[0][i] = listbangun[0][j]
                     listbangun[0][j] = temp0
+                    print (listbangun)
                 elif listbangun[1][i] == listbangun[1][j]:
                     if listbangun[0][i] > listbangun[0][j]:
                         temp0 = listbangun[0][i]
