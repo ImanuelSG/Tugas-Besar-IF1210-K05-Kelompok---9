@@ -1,5 +1,5 @@
 import Global
-from RNG import rng
+from RNG import rngb
 
 def getsmallestcandi(list):#Function untuk mendapatkan indexterkecil candi yang masi kosong
     i=0
