@@ -15,6 +15,7 @@ from LaporanCandi import laporancandi
 from LaporanJin import laporanjin
 from JinPembangun import JinPembangun
 from JinPengumpul import JinPengumpul
+from undo import undo
 
 
 load()
@@ -116,11 +117,17 @@ while keluar == False :
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
 
+        elif command == "undo":
+            undo()
+
+
         elif command == "logout" :
             Logout.logout() # Fungsi Logout
             LoggedIn = False
             Login.isLoggedIn = None 
 
+
+        
 
         else :
             print ('Command tidak ditemukan, silahkan run command "help" untuk melihat daftar command yang dapat digunakan')

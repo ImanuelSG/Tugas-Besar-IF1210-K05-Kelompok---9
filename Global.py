@@ -9,10 +9,11 @@ m = time.minute
 s = time.second
 seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
 
-users = [[""for j in range (3)] for i in range(103)] #Matriks users
-candi = [[""for j in range (5)] for i in range (101)] #Matriks candi
+users = [["" for j in range (3)] for i in range(103)] #Matriks users
+candi = [["" for j in range (5)] for i in range (101)] #Matriks candi
 bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
-
+candiundo=[["" for j in range (5)] for i in range (101)]
+userundo=["","",""]
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line) :
     semicolon = 1
@@ -76,6 +77,13 @@ def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array yang terisi
             break
     return hasil
 
+def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi kosong
+    i=0
+    while list[i][0]!='':
+        i+=1
+        if i == N:
+            break
+    return i
 
 def isRegisteredJin(user):#Untuk mengecek apakah jin tergeistrasi dan mengembalikan indexnya jika memang ada
     benar = 999
