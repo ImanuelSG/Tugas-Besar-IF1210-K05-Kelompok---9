@@ -18,3 +18,4 @@ def UbahTipeJin():
                 Global.users[posisi][2] = 'jin_pembangun'
             else :
                 Global.users[posisi][2] = 'jin_pengumpul'
+        print("Jin telah berhasil diubah.")
