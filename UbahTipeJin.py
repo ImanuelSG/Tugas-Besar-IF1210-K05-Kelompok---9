@@ -13,7 +13,7 @@ def UbahTipeJin():
         else :
             show = ["Pembangun","Pengumpul"]
         pilihan = str (input(f'Jin ini bertipe "{show[0]}". Yakin ingin mengubah ke tipe "{show[1]}" (Y/N)? '))
-        if pilihan == 'Y' or 'y':
+        if pilihan == 'Y' or pilihan == 'y':
             if Global.users[posisi][2] == 'jin_pengumpul':
                 Global.users[posisi][2] = 'jin_pembangun'
             else :
