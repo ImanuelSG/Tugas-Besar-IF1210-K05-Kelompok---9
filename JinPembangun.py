@@ -1,7 +1,7 @@
 import Global
 from RNG import rngb
 
-def getsmallestcandi(list):#Function untuk mendapatkan indexterkecil candi yang masi kosong
+def getsmallestcandi(list:list)->int:#Function untuk mendapatkan indexterkecil candi yang masi kosong
     i=0
     while list[i][0]!='':
         i+=1
@@ -9,7 +9,7 @@ def getsmallestcandi(list):#Function untuk mendapatkan indexterkecil candi yang 
             break
     return i
     
-def getjumlahcandi(list):#Function untuk mendapatkan jumlahcandi yang sudah dibangun
+def getjumlahcandi(list:list)->int:#Function untuk mendapatkan jumlahcandi yang sudah dibangun
     count=0
     for i in range (1,101):
         if list[i][0]!='':
@@ -31,7 +31,6 @@ def JinPembangun (pembangun):
             Global.candi[tempat]=[tempat,pembangun,pasir,batu,air]
         print ("Candi berhasil dibangun")
         print (f"Sisa candi yang perlu dibangun: {100-getjumlahcandi(Global.candi)}")
-        print (Global.candi)
     else :
         print ("Bahan bangunan tidak mencukupi.")
         print ("Candi tidak bisa dibangun!")

@@ -1,4 +1,5 @@
 import datetime
+import typing
 time = datetime.datetime.now()
 
 y = time.year
@@ -15,13 +16,13 @@ bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
 candiundo=[["" for j in range (5)] for i in range (101)]
 userundo=["","",""]
 # Fungsi untuk membagi file csv menjadi username, password, role
-def split_csv(line) :
+def split_csv(line : str) -> list:
     semicolon = 1
     for i in range (len(line)) :
         if line[i] == ";" :
             semicolon += 1
-    Temp = [ "" for i in range (semicolon)] # Array untuk menyimpan semua data dalam 1 baris (Misal username + password + role)
-    idx = 0 # Indeks untuk array Temp
+    Temp = [ "" for i in range (semicolon)] # list untuk menyimpan semua data dalam 1 baris (Misal username + password + role)
+    idx = 0 # Indeks untuk list Temp
     for i in range (len(line)) :
         if  line[i] == "\n" :
             idx+=1
@@ -32,14 +33,14 @@ def split_csv(line) :
     return Temp
 
 # Buka file csv, melakukan pengisian mtx (matrix) melalui fungsi split_csv, lalu mengembalikan matriks
-def read_csv(file,arr) :
+def read_csv(file : str ,arr : list)  -> list:
     with open(file,"r") as file : 
         idx = 0
         for line in file :
             arr[idx] = split_csv(line)
             idx += 1
 
-def read_csv_candi(file,arr):#
+def read_csv_candi(file: str, arr: list) -> list:
     with open(file,"r") as file : 
         idx = 0
         for line in file :
@@ -56,7 +57,7 @@ def read_csv_candi(file,arr):#
                 arr[idx] = split_csv(line)
             idx += 1
 
-def read_csv_bahan (file,arr):
+def read_csv_bahan (file:str ,arr: list) -> list:
     with open(file,"r") as file : 
         idx = 0
         for line in file :
@@ -70,14 +71,14 @@ def read_csv_bahan (file,arr):
                 arr[idx] = split_csv(line)
             idx += 1
 
-def getbiggestindex(arr,N):#Fungsi untuk mendapatkan panjang array yang terisi
+def getbiggestindex(arr: list,N:int) -> int:#Fungsi untuk mendapatkan index  list yang terisi
     for i in range (N,-1,-1):
         if arr[i][0]!='':
             hasil = i
             break
     return hasil
 
-def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi kosong
+def getsmallestindex(list: list, N: int) -> int:#Function untuk mendapatkan indexterkecil yang masi kosong
     i=0
     while list[i][0]!='':
         i+=1
@@ -85,7 +86,7 @@ def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi
             break
     return i
 
-def isRegisteredJin(user):#Untuk mengecek apakah jin tergeistrasi dan mengembalikan indexnya jika memang ada
+def isRegisteredJin(user:str) -> int:#Untuk mengecek apakah jin tergeistrasi dan mengembalikan indexnya jika memang ada
     benar = 999
     for i in range(3,103):
         if users[i][0] == user:

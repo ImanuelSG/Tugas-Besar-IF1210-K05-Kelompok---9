@@ -76,7 +76,6 @@ def laporanjin():
                     temp0 = listbangun[0][i]
                     listbangun[0][i] = listbangun[0][j]
                     listbangun[0][j] = temp0
-                    print (listbangun)
                 elif listbangun[1][i] == listbangun[1][j]:
                     if listbangun[0][i] > listbangun[0][j]:
                         temp0 = listbangun[0][i]

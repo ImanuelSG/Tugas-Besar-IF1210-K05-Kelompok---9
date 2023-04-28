@@ -9,7 +9,7 @@ def HilangkanJin ():
     else :
         pilihan = input ((f"Apakah anda yakin ingin menghapus jin dengan username {username} (Y/N)?"))
         if pilihan == "Y" or pilihan == "y":
-            GLobal.userundo=[GLobal.users[tanda][0],GLobal.users[tanda][1],GLobal.users[tanda][2]]
+            Global.userundo=[Global.users[tanda][0],Global.users[tanda][1],Global.users[tanda][2]]
             Global.users[tanda]=["","",""] ## hapus data jin
             for i in range (101):
                 if Global.candi[i][1] == username:

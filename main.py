@@ -21,7 +21,6 @@ from undo import undo
 load()
 LoggedIn = False
 keluar = False
-print(Global.candi)
 while keluar == False :
     command = input(">>> ")
     if command == "login":
@@ -34,7 +33,7 @@ while keluar == False :
     elif command == "help" and LoggedIn==False:
         Help(0)
     elif command == "save" :
-            save()
+        save()
     elif LoggedIn == False :
         print("Silakan menggunakan command 'login' terlebih dahulu")
     else : #Jika Sudah login
@@ -125,9 +124,6 @@ while keluar == False :
             Logout.logout() # Fungsi Logout
             LoggedIn = False
             Login.isLoggedIn = None 
-
-
-        
 
         else :
             print ('Command tidak ditemukan, silahkan run command "help" untuk melihat daftar command yang dapat digunakan')

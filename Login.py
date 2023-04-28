@@ -1,6 +1,6 @@
 import Global
 # Fungsi mengecek apakah username sudah terdaftar dan mengembalikan posisi indeks dari user (untuk track jenis user)
-def isRegistered(user):
+def isRegistered(user:str)->int:
     benar = 999
     for i in range(1,103):
         if Global.users[i] != "" and Global.users[i][0] == user :

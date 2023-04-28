@@ -1,8 +1,9 @@
 import Global
+import typing
 from loadandsave import load
 from Global import getbiggestindex
 # Fungsi untuk menghapus candi dari matriks candi
-def remove_IDcandi(candi, IDdiHapus):
+def remove_IDcandi(candi:int, IDdiHapus:int) -> list:
     for i in range(getbiggestindex(candi,100)+1):
         if candi[i][0] == IDdiHapus:
             candi[i] = ['','','','','']
@@ -10,7 +11,7 @@ def remove_IDcandi(candi, IDdiHapus):
     return candi
 
 # Fungsi untuk mengecek apakah ID dari candi yang dimasukkan ada atau tidak
-def isRegisteredCandi(IDcandi) :
+def isRegisteredCandi(IDcandi:int)  -> int:
     benar = 999
     for i in range(1,101) :
         if Global.candi[i][0] == IDcandi :
@@ -25,12 +26,9 @@ def hancurkancandi() :
         if Konfirmasi == "Y" :  # Y artinya setuju untuk dihancurkan
             print("Candi telah berhasil dihancurkan.")
             remove_IDcandi(Global.candi, IDcandi)
-            print(Global.candi)
-            print 
         elif Konfirmasi == "N" : # N artinya tidak setuju untuk dihancurkan
             print("Tidak jadi dihancurkan.")
         else : # Input bukan Y maupun N
             print("Silakan input antara Y atau N.")
     else : # ID candi tidak ada
         print("Tidak ada candi dengan ID tersebut.")
-

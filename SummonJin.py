@@ -1,12 +1,12 @@
 import Global
 from Global import getbiggestindex
-def isValidPassword(password):#Function untuk menentukan apakah password valid
+def isValidPassword(password:str)->bool :#Function untuk menentukan apakah password valid
     if (5<= len(password) <=25):
         return True
     else :
         return False
 
-def isUniqueUsername(abc):#Function untuk menentukan apakah username yang dimasukkan unique
+def isUniqueUsername(abc:str)->bool:#Function untuk menentukan apakah username yang dimasukkan unique
     i=1
     unique = True
     for i in range (1,getbiggestindex(Global.users,102)+1):
@@ -17,7 +17,7 @@ def isUniqueUsername(abc):#Function untuk menentukan apakah username yang dimasu
             break 
     return unique
 
-def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi kosong
+def getsmallestindex(list:list,N:int)->int:#Function untuk mendapatkan indexterkecil yang masi kosong
     i=0
     while list[i][0]!='':
         i+=1
@@ -25,14 +25,14 @@ def getsmallestindex(list,N):#Function untuk mendapatkan indexterkecil yang masi
             break
     return i
 
-def getNumJinPengumpul(list):
+def getNumJinPengumpul(list:list)->int:
     count = 0
     for i in range (3,103):
         if list[i][2] == "jin_pengumpul":
             count +=1
     return count
 
-def getNumJinPembangun(list):
+def getNumJinPembangun(list:list)->int:
     count = 0
     for i in range (3,103):
         if list[i][2] == "jin_pembangun":
