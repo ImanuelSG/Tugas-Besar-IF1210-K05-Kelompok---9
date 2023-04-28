@@ -3,7 +3,7 @@ import Login
 from Help import Help
 import Exit
 import Global
-from AyamBerkokok import ayamberkokok
+from Ayamberkokok import ayamberkokok
 from HancurkanCandi import hancurkancandi
 from SummonJin import SummonJin
 from HilangkanJin import HilangkanJin
@@ -15,8 +15,6 @@ from LaporanCandi import laporancandi
 from LaporanJin import laporanjin
 from JinPembangun import JinPembangun
 from JinPengumpul import JinPengumpul
-from undo import undo
-
 
 load()
 LoggedIn = False
@@ -39,6 +37,8 @@ while keluar == False :
     else : #Jika Sudah login
         if command == "help" :
             Help(Login.id) # Fungsi Help
+
+
         elif command == "summonjin" :
             if Global.users[Login.id][0] == "Bondowoso":
                 SummonJin() # Fungsi Summon jin
@@ -116,14 +116,11 @@ while keluar == False :
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
 
-        elif command == "undo":
-            undo()
-
-
         elif command == "logout" :
             Logout.logout() # Fungsi Logout
             LoggedIn = False
             Login.isLoggedIn = None 
+
 
         else :
             print ('Command tidak ditemukan, silahkan run command "help" untuk melihat daftar command yang dapat digunakan')

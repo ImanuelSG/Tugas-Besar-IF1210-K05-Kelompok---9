@@ -13,8 +13,7 @@ seed =(y*365 + mn*30 + d)*24*60 + h*24 + m*60 + s
 users = [["" for j in range (3)] for i in range(103)] #Matriks users
 candi = [["" for j in range (5)] for i in range (101)] #Matriks candi
 bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
-candiundo=[["" for j in range (5)] for i in range (101)]
-userundo=["","",""]
+
 # Fungsi untuk membagi file csv menjadi username, password, role
 def split_csv(line : str) -> list:
     semicolon = 1
