@@ -3,7 +3,7 @@ import Login
 from Help import Help
 import Exit
 import Global
-from AyamBerkokok import ayamberkokok
+from Ayamberkokok import ayamberkokok
 from HancurkanCandi import hancurkancandi
 from SummonJin import SummonJin
 from HilangkanJin import HilangkanJin
@@ -20,7 +20,6 @@ from JinPengumpul import JinPengumpul
 load()
 LoggedIn = False
 keluar = False
-print(Global.candi)
 while keluar == False :
     command = input(">>> ")
     if command == "login":

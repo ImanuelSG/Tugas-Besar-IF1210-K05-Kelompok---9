@@ -76,6 +76,5 @@ def SummonJin ():
             Global.users[n][2]="jin_pengumpul"
         else :
             Global.users[n][2]="jin_pembangun"
-        print (Global.users)
     else :
         print (f"Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
