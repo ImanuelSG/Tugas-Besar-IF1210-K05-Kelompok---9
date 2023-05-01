@@ -26,7 +26,7 @@ def JinPembangun (pembangun):
             tools = [pasir,batu,air]
             temp -= tools[i-1]
             Global.bahan[i][2] = temp
-        if getjumlahcandi(Global.candi) <=100:
+        if getjumlahcandi(Global.candi) <100:
             tempat = getsmallestcandi(Global.candi)
             Global.candi[tempat]=[tempat,pembangun,pasir,batu,air]
         print ("Candi berhasil dibangun")

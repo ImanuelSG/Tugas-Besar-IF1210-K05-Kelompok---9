@@ -94,5 +94,21 @@ def batchbangun():
                 Global.bahan[i][2] -= totalbahan[i-1]
             print("Jin berhasil membangun total "+ str(totaljin) +" candi.")
         else:
-            print("Bangun gagal. Kurang "+ str(totalbahan[0] - Global.bahan[1][2]) +" pasir, "+ str(totalbahan[1] - Global.bahan[2][2]) +" batu, dan "+ str(totalbahan[2] - Global.bahan[3][2]) +" air.")
-
+            if Global.bahan[1][2] < totalbahan[0]: # Hanya pasir yang Kurang
+                if Global.bahan[2][2] < totalbahan [1]: # pasir dan batu kurang
+                    if Global.bahan[3][2] <totalbahan[2]:# Ketiganya kurang
+                        print("Bangun gagal. Kurang "+ str(totalbahan[0] - Global.bahan[1][2]) +" pasir, "+ str(totalbahan[1] - Global.bahan[2][2]) +" batu, dan "+ str(totalbahan[2] - Global.bahan[3][2]) +" air.")
+                    else:
+                        print("Bangun gagal. Kurang "+ str(totalbahan[0] - Global.bahan[1][2]) +" pasir dan "+ str(totalbahan[1] - Global.bahan[2][2]) +" batu.")
+                elif Global.bahan[3][2] < totalbahan[2]: #pasir dan air kurang
+                    print ("Bangun gagal. Kurang " + str(totalbahan[0] - Global.bahan[1][2]) +" pasir dan "+ str (totalbahan[2]-Global.bahan[3][2]) +" air.")
+                else:
+                    print("Bangun gagal. Kurang "+ str(totalbahan[0] - Global.bahan[1][2]) +" pasir.")
+            elif Global.bahan[2][2] <totalbahan[1]: # Hanya batu kurang
+                if Global.bahan[3][2] < totalbahan[2]: # batu dan air kurang
+                    print ("Bangun gagal. Kurang "+ str(totalbahan[1] - Global.bahan[2][2]) +" batu dan "+ str(totalbahan[2] - Global.bahan[3][2]) +" air.")
+                else:
+                    print ("Bangun gagal. Kurang "+ str(totalbahan[1] - Global.bahan[2][2]) +" batu.")
+            else: # air kurang
+                print("Bangun gagal. Kurang "+ str(totalbahan[2] - Global.bahan[3][2]) +" air.")
+                
