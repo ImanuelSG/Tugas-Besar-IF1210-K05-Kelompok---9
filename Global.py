@@ -14,7 +14,7 @@ users = [["" for j in range (3)] for i in range(103)] #Matriks users
 candi = [["" for j in range (5)] for i in range (101)] #Matriks candi
 bahan = [[0 for j in range (3)] for i in range (4)] #Matriks bahan-bahan
 
-# Fungsi untuk membagi file csv menjadi username, password, role
+# Fungsi untuk membagi data file csv yang dipisahkan oleh semicolon ke dalam masing-masing "kolom" array
 def split_csv(line : str) -> list:
     semicolon = 1
     for i in range (len(line)) :
@@ -32,14 +32,14 @@ def split_csv(line : str) -> list:
     return Temp
 
 # Buka file csv, melakukan pengisian mtx (matrix) melalui fungsi split_csv, lalu mengembalikan matriks
-def read_csv(file : str ,arr : list)  -> list:
+def read_csv(file , arr)  :
     with open(file,"r") as file : 
         idx = 0
         for line in file :
             arr[idx] = split_csv(line)
             idx += 1
 
-def read_csv_candi(file: str, arr: list) -> list:
+def read_csv_candi(file, arr) :
     with open(file,"r") as file : 
         idx = 0
         for line in file :
@@ -56,7 +56,7 @@ def read_csv_candi(file: str, arr: list) -> list:
                 arr[idx] = split_csv(line)
             idx += 1
 
-def read_csv_bahan (file:str ,arr: list) -> list:
+def read_csv_bahan (file,arr) :
     with open(file,"r") as file : 
         idx = 0
         for line in file :

@@ -42,7 +42,7 @@ while keluar == False :
         elif command == "summonjin" :
             if Global.users[Login.id][0] == "Bondowoso":
                 SummonJin() # Fungsi Summon jin
-            else: # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            else: 
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
 
@@ -91,14 +91,14 @@ while keluar == False :
         elif command == "ayamberkokok" :
             if Global.users[Login.id][0] == "Roro" :
                 ayamberkokok() # Fungsi ayam berkokok
-            else: # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            else: 
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
 
         elif command == "hancurkancandi" :
             if Global.users[Login.id][0] == "Roro" :
                 hancurkancandi() # Fungsi menghancurkan candi 
-            else : # Jikalau sudah login dan buka Roro maka tidak boleh menggunakan command ayamberkokok
+            else : 
                 print("Tidak memiliki izin untuk menggunakan command ini")
 
 

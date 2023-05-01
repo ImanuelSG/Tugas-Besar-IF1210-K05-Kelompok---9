@@ -1,5 +1,4 @@
 # Fungsi untuk help
-import Login
 import Global
 def Help(id) :
     if id == 0 :#Belum Login
